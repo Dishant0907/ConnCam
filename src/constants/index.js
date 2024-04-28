@@ -17,7 +17,7 @@ export const sidebarItems = [
     {
         imageUrl: '/icons/recordings.svg',
         route: '/recordings',
-        label: 'Personal-room',
+        label: 'Recordings',
       },
     {
       imageUrl: '/icons/add-meeting.svg',
