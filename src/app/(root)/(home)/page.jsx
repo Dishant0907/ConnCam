@@ -1,15 +1,17 @@
 "use client"
 import MeetingTypeList from '@/components/MeetingTypeList';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Home = () => {
   const now = new Date()
   const [livetime,setLiveTime] = useState()
   
-  setInterval(()=>{
-    const time = now.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
-    setLiveTime(time)
-  },1000)
+  useEffect(()=>{
+    setInterval(()=>{
+      const time = now.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
+      setLiveTime(time)
+    },1000)
+  },[livetime])
   const date = (new Intl.DateTimeFormat('en-US',{
     dateStyle:'full'
   })).format(now);
